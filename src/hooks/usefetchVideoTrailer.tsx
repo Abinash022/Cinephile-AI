@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { OPTIONS } from "../utils/constant/constant";
 
-const useFetchVideoTrailer = (movieId: number) => {
+const useFetchVideoTrailer = (movieId: string | number | undefined) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     async function getMovieTrailer() {

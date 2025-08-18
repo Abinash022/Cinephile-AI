@@ -3,11 +3,12 @@ import useFetchVideoTrailer from "../hooks/usefetchVideoTrailer";
 
 const MainMovieSection = () => {
   const { movieData } = useFetchMovies();
-  const movieId = movieData?.[10]?.id;
+  const movieId = movieData?.[0]?.id;
+
   const { data } = useFetchVideoTrailer(movieId);
-  const trailerTitle = movieData?.[10].title;
-  const trailerDescription = movieData?.[10].overview;
-  const releaseDate = movieData?.[10].release_date;
+  const trailerTitle = movieData?.[0].title;
+  const trailerDescription = movieData?.[0].overview;
+  const releaseDate = movieData?.[0].release_date;
 
   return (
     <div className=" w-full h-screen overflow-hidden bg-black">
@@ -25,8 +26,8 @@ const MainMovieSection = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
-      <div className="absolute inset-0 flex flex-col justify-center items-start p-12 max-w-2xl">
-        <h1 className="text-white font-bold text-7xl mb-6 leading-tight tracking-tight">
+      <div className="absolute inset-0 flex flex-col justify-center items-start p-12 max-w-2xl mt-32">
+        <h1 className="text-white font-bold text-5xl mb-6 leading-tight tracking-tight">
           {trailerTitle}
         </h1>
         <p className="text-white font-normal text-lg mb-6 max-w-lg leading-relaxed">
@@ -34,13 +35,13 @@ const MainMovieSection = () => {
         </p>
 
         <div className="flex gap-4 mb-8">
-          <button className="flex items-center gap-2 bg-white text-black font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition-colors">
+          <button className="flex items-center gap-2 bg-white text-black font-semibold px-8 py-3 rounded-4xl hover:bg-gray-200 transition-colors">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
             Play
           </button>
-          <button className="flex items-center gap-2 bg-gray-600/70 text-white font-semibold px-8 py-3 rounded-md hover:bg-gray-600/90 transition-colors">
+          <button className="flex items-center gap-2 bg-gray-600/70 text-white font-semibold px-8 py-3 rounded-4xl hover:bg-gray-600/90 transition-colors">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -68,12 +69,6 @@ const MainMovieSection = () => {
             HD
           </span>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-12">
-        <span className="border border-gray-400 text-white text-sm px-3 py-1 rounded">
-          16+
-        </span>
       </div>
     </div>
   );
