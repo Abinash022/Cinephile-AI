@@ -1,13 +1,9 @@
-import useFetchMovies from "../hooks/useFetchMovies";
-
-const MovieCard = () => {
-  const { movieData } = useFetchMovies();
-
+const MovieCard = ({ movieData }) => {
   if (!movieData) return;
 
   return (
     <div className="px-12">
-      <div className="flex gap-4 overflow-x-scroll scrollbar-hide w-full">
+      <div className="flex gap-4 overflow-x-scroll overflow-y-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] ">
         {movieData.map((movie) => (
           <div
             key={movie.id}
@@ -34,7 +30,7 @@ const MovieCard = () => {
             </div>
 
             <div className="text-white">
-              <h3 className="font-semibold text-sm mb-1 line-clamp-2 group-hover:text-gray-300 transition-colors">
+              <h3 className="font-semibold text-md mb-1 line-clamp-2 group-hover:text-gray-300 transition-colors">
                 {movie.title}
               </h3>
 
