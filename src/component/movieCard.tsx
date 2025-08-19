@@ -1,4 +1,10 @@
-const MovieCard = ({ movieData }) => {
+import type { Movie } from "../utils/interface";
+
+type MovieCardProps = {
+  movieData: Movie[];
+};
+
+const MovieCard = ({ movieData }: MovieCardProps) => {
   if (!movieData) return;
 
   return (

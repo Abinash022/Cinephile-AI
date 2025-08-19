@@ -14,19 +14,19 @@ const SecondaryContainer = () => {
       <h1 className="text-white font-bold mb-9 text-2xl mx-12">
         Newly Released
       </h1>
-      <MovieCard movieData={movieData} />
+      <MovieCard movieData={movieData ?? []} />
       <h1 className="text-white font-bold mb-9 text-2xl mx-12  mt-9">
         Trending Now
       </h1>
-      <MovieCard movieData={trendingMovies} />
+      <MovieCard movieData={trendingMovies ?? []} />
       <h1 className="text-white font-bold mb-9 text-2xl mx-12 mt-9">
         Top Rated Movies
       </h1>
-      <MovieCard movieData={topRatedMovies} />
+      <MovieCard movieData={topRatedMovies ?? []} />
       <h1 className="text-white font-bold mb-9 text-2xl mx-12 mt-9">
         UpComing Movies
       </h1>
-      <MovieCard movieData={upComingMovies} />
+      <MovieCard movieData={upComingMovies ?? []} />
     </div>
   );
 };

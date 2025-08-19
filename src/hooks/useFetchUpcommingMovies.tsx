@@ -21,7 +21,7 @@ const useFetchUpcomingMovies = () => {
       }
     }
     fetchUpcomingMovies();
-  });
+  }, []);
   return { upComingMovies };
 };
 
