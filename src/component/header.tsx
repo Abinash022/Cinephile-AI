@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent">
@@ -6,31 +8,31 @@ const Header = () => {
           <img src="cinephile.png" alt="Cinephile Logo" className="h-16 w-22" />
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#"
-            className="text-white hover:text-gray-300 transition-colors font-medium"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-300 transition-colors font-medium"
-          >
-            Explore
-          </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-300 transition-colors font-medium"
-          >
-            Movie Release
-          </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-300 transition-colors font-medium"
-          >
-            Tv Shows
-          </a>
+        <nav className="hidden md:flex items-center">
+          <ul className="flex items-center space-x-8">
+            <li>
+              <Link to="/">
+                <span className="text-white hover:text-gray-300 transition-colors font-medium cursor-pointer">
+                  Home
+                </span>
+              </Link>
+            </li>
+            <li>
+              <span className="text-white hover:text-gray-300 transition-colors font-medium cursor-pointer">
+                Explore
+              </span>
+            </li>
+            <li>
+              <span className="text-white hover:text-gray-300 transition-colors font-medium cursor-pointer">
+                Movie Release
+              </span>
+            </li>
+            <li>
+              <span className="text-white hover:text-gray-300 transition-colors font-medium cursor-pointer">
+                Tv Shows
+              </span>
+            </li>
+          </ul>
         </nav>
 
         <div className="flex items-center space-x-4">

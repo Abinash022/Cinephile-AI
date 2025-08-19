@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { OPTIONS } from "../utils/constant/constant";
+import { OPTIONS } from "../utils/constant";
 import type { Movie } from "../utils/interface";
 
 const useFetchTopRatedMovies = () => {
