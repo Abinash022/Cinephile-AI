@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { OPTIONS } from "../utils/constant/constant";
+import type { Movie } from "../utils/interface";
 
 const useFetchTopRatedMovies = () => {
-  const [topRatedMovies, setTopRatedMovies] = useState(null);
+  const [topRatedMovies, setTopRatedMovies] = useState<Movie[] | null>(null);
   useEffect(() => {
     async function fetchTopRatedMovies() {
       const url =

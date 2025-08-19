@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { OPTIONS } from "../utils/constant/constant";
+import type { Movie } from "../utils/interface";
 
 const useFetchTrendingMovie = () => {
-  const [trendingMovies, setTrendingMovies] = useState(null);
+  const [trendingMovies, setTrendingMovies] = useState<Movie[] | null>(null);
   useEffect(() => {
     async function getTrendingMovies() {
       const url =
