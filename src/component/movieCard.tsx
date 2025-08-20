@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Movie } from "../utils/interface";
 
 type MovieCardProps = {
@@ -5,6 +6,7 @@ type MovieCardProps = {
 };
 
 const MovieCard = ({ movieData }: MovieCardProps) => {
+  const navigate = useNavigate();
   if (!movieData) return;
 
   return (
@@ -12,6 +14,9 @@ const MovieCard = ({ movieData }: MovieCardProps) => {
       <div className="flex gap-4 overflow-x-scroll overflow-y-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] ">
         {movieData.map((movie) => (
           <div
+            onClick={() => {
+              navigate(`/movies/${movie.id}`);
+            }}
             key={movie.id}
             className="min-w-[200px] group cursor-pointer transition-transform duration-300 hover:scale-105"
           >
