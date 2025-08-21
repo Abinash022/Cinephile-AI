@@ -6,8 +6,6 @@ import type { MovieDetail } from "../utils/interface";
 const useFetchMovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState<MovieDetail | null>(null);
   const { id } = useParams<{ id: string }>();
-  console.log("useParams:", useParams());
-  console.log("movieId:", id);
 
   useEffect(() => {
     async function getMovieDetails() {
