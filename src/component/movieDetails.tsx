@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import useFetchMovieDetails from "../hooks/useFetchMovieDetails";
 import useFetchSimilarMovies from "../hooks/useFetchSimilarMovies";
 import MovieCard from "./movieCard";
@@ -5,12 +6,16 @@ import MovieCard from "./movieCard";
 const MovieDetailPage = () => {
   const { movieDetails } = useFetchMovieDetails();
   const { similarMovies } = useFetchSimilarMovies();
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <nav className="absolute top-0 left-0 right-0 z-50 p-6">
         <div className="flex items-center justify-between">
-          <button className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center hover:bg-black/70 transition-all">
+          <button
+            className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center hover:bg-black/70 transition-all"
+            onClick={() => navigate(-1)}
+          >
             <svg
               className="w-6 h-6 text-white"
               fill="none"
