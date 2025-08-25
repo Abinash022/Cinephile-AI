@@ -1,86 +1,10 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
-
-  const mockResults = [
-    {
-      id: 1,
-      title: "The Dark Knight",
-      year: "2008",
-      poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-      rating: 9.0,
-      genre: "Action, Crime, Drama",
-      overview:
-        "Batman raises the stakes in his war on crime with the help of Lt. Jim Gordon and District Attorney Harvey Dent.",
-    },
-    {
-      id: 2,
-      title: "Inception",
-      year: "2010",
-      poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-      rating: 8.8,
-      genre: "Action, Sci-Fi, Thriller",
-      overview:
-        "A skilled thief is given a chance at redemption if he can successfully perform an impossible task: inception.",
-    },
-    {
-      id: 3,
-      title: "Interstellar",
-      year: "2014",
-      poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-      rating: 8.6,
-      genre: "Adventure, Drama, Sci-Fi",
-      overview:
-        "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-    },
-    {
-      id: 4,
-      title: "The Matrix",
-      year: "1999",
-      poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
-      rating: 8.7,
-      genre: "Action, Sci-Fi",
-      overview:
-        "A computer programmer discovers that reality as he knows it is a simulation controlled by cyber-criminals.",
-    },
-    {
-      id: 5,
-      title: "Pulp Fiction",
-      year: "1994",
-      poster: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
-      rating: 8.9,
-      genre: "Crime, Drama",
-      overview:
-        "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.",
-    },
-  ];
-
-  const handleSearch = (query) => {
-    if (query.trim()) {
-      setIsSearching(true);
-      setTimeout(() => {
-        setSearchResults(
-          mockResults.filter((movie) =>
-            movie.title.toLowerCase().includes(query.toLowerCase())
-          )
-        );
-        setIsSearching(false);
-      }, 800);
-    } else {
-      setSearchResults([]);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    handleSearch(query);
-  };
+  let isSearching;
+  let searchQuery;
+  const searchResults: string[] = [];
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -146,9 +70,7 @@ const SearchPage = () => {
             <div className="relative">
               <input
                 type="text"
-                value={searchQuery}
-                onChange={handleInputChange}
-                placeholder="Suggest me a good Movies on thriller ..."
+                placeholder="Seach for Movies like you search on Google....."
                 className="w-full h-16 bg-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl px-6 pr-16 text-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500/50 transition-all duration-300 hover:bg-gray-800/80"
               />
 
@@ -190,10 +112,7 @@ const SearchPage = () => {
               ].map((genre) => (
                 <button
                   key={genre}
-                  onClick={() => {
-                    setSearchQuery(genre);
-                    handleSearch(genre);
-                  }}
+                  onClick={() => {}}
                   className="px-6 py-3 bg-gray-800/60 backdrop-blur-md border border-gray-600/50 rounded-full text-gray-300 hover:bg-gray-700/80 hover:text-white hover:border-red-500/50 transition-all duration-300 hover:scale-105"
                 >
                   {genre}
@@ -214,9 +133,9 @@ const SearchPage = () => {
             </div>
 
             <div className="grid gap-6">
-              {searchResults.map((movie) => (
+              {searchResults.map(() => (
                 <div
-                  key={movie.id}
+                  key={1}
                   className="group bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 rounded-2xl p-6 hover:bg-gray-800/60 hover:border-gray-600/50 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
                 >
                   <div className="flex gap-6">
@@ -224,8 +143,8 @@ const SearchPage = () => {
                     <div className="flex-shrink-0">
                       <div className="w-24 h-36 rounded-lg overflow-hidden">
                         <img
-                          src={movie.poster}
-                          alt={movie.title}
+                          src="https://m.media-amazon.com/images/I/71i6JuSZUGL.jpg"
+                          alt="John Wick 3 "
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
@@ -235,7 +154,7 @@ const SearchPage = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="text-xl font-bold text-white group-hover:text-red-400 transition-colors">
-                          {movie.title}
+                          John Wick 3
                         </h3>
                         <div className="flex items-center gap-1 bg-yellow-600/20 px-2 py-1 rounded-full">
                           <svg
@@ -246,21 +165,19 @@ const SearchPage = () => {
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                           <span className="text-yellow-400 text-sm font-medium">
-                            {movie.rating}
+                            7.76
                           </span>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-4 mb-3">
-                        <span className="text-gray-300">{movie.year}</span>
+                        <span className="text-gray-300">2025</span>
                         <span className="text-gray-500">•</span>
-                        <span className="text-gray-400 text-sm">
-                          {movie.genre}
-                        </span>
+                        <span className="text-gray-400 text-sm">Action</span>
                       </div>
 
                       <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
-                        {movie.overview}
+                        This is Some Description
                       </p>
 
                       {/* Action Buttons */}

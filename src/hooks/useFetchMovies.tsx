@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { OPTIONS } from "../utils/constant";
-import type { Movie } from "../utils/interface";
+import { type Movie } from "../utils/interface";
 
-const useFetchMovies = () => {
+const useFetchMovies = (url: string) => {
   const [movieData, setMovieData] = useState<Movie[] | null>(null);
   useEffect(() => {
     async function getAllMovies() {
-      const url = "https://api.themoviedb.org/3/discover/movie";
       try {
         const response = await fetch(url, OPTIONS);
         const json = await response.json();
@@ -17,7 +16,7 @@ const useFetchMovies = () => {
       }
     }
     getAllMovies();
-  }, []);
+  }, [url]);
   return { movieData };
 };
 

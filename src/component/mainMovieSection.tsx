@@ -2,7 +2,9 @@ import useFetchMovies from "../hooks/useFetchMovies";
 import useFetchVideoTrailer from "../hooks/usefetchVideoTrailer";
 
 const MainMovieSection = () => {
-  const { movieData } = useFetchMovies();
+  const { movieData } = useFetchMovies(
+    "https://api.themoviedb.org/3/discover/movie"
+  );
   const movieId = movieData?.[0]?.id;
 
   const { data } = useFetchVideoTrailer(movieId);
