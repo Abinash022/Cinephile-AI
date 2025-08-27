@@ -1,16 +1,19 @@
 import useFetchMovies from "../hooks/useFetchMovies";
 import useFetchVideoTrailer from "../hooks/usefetchVideoTrailer";
 
+
+
 const MainMovieSection = () => {
   const { movieData } = useFetchMovies(
     "https://api.themoviedb.org/3/discover/movie"
   );
-  const movieId = movieData?.[2]?.id;
+  const movieId = movieData?.[17]?.id;
 
-  const { data } = useFetchVideoTrailer(movieId);
-  const trailerTitle = movieData?.[2].title;
-  const trailerDescription = movieData?.[2].overview;
-  const releaseDate = movieData?.[2].release_date;
+  const { data  } = useFetchVideoTrailer(movieId);
+
+  const trailerTitle = movieData?.[17].title;
+  const trailerDescription = movieData?.[17].overview;
+  const releaseDate = movieData?.[17].release_date;
 
   return (
     <div className=" w-full h-screen overflow-hidden bg-black">
