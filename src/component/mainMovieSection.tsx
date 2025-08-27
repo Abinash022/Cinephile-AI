@@ -5,12 +5,12 @@ const MainMovieSection = () => {
   const { movieData } = useFetchMovies(
     "https://api.themoviedb.org/3/discover/movie"
   );
-  const movieId = movieData?.[0]?.id;
+  const movieId = movieData?.[2]?.id;
 
   const { data } = useFetchVideoTrailer(movieId);
-  const trailerTitle = movieData?.[0].title;
-  const trailerDescription = movieData?.[0].overview;
-  const releaseDate = movieData?.[0].release_date;
+  const trailerTitle = movieData?.[2].title;
+  const trailerDescription = movieData?.[2].overview;
+  const releaseDate = movieData?.[2].release_date;
 
   return (
     <div className=" w-full h-screen overflow-hidden bg-black">
