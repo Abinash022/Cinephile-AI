@@ -1,17 +1,18 @@
-🎥 Cinephile AI
+## Cinephile AI
 
 Cinephile AI is your ultimate movie discovery companion, powered by AI to deliver personalized film recommendations. Chat with prompts like “Suggest top Brad Pitt movies” or “Find me thrillers from the 90s” and explore a Netflix-style interface with vibrant movie details, posters, and seamless browsing. Built with React and integrated with movie APIs, it’s a playground for cinephiles and developers alike!
 
-📸 Visuals
+# Visuals
+
 ![Image](https://github.com/user-attachments/assets/cfb6241b-4d76-4cb1-a8e9-c4a9c6e21477)
 
-✨ Features
+# Features
 
 - AI-Powered Recommendations: Get tailored movie suggestions via natural language queries.
 - Sleek Interface: Enjoy a responsive, Netflix-inspired design with rich movie details.
 - Developer-Friendly: Easy-to-tweak codebase for adding new features or APIs.
 
-🛠️ Installation
+# Installation
 
 To Start running the project Locally. Follow the Steps below :-
 
@@ -36,7 +37,8 @@ To Start running the project Locally. Follow the Steps below :-
 - API Errors: Ensure your API keys are valid and correctly added to .env.Port
 - Conflicts: Change the port in package.json if 3000 is in use.
 
-🤝 Contributing
+# Contributing
+
 Any Contribution in the Project are absolutely Welcomed! To get started:
 
 - Fork the repo and create a branch (git checkout -b feature/your-feature).
@@ -44,7 +46,7 @@ Any Contribution in the Project are absolutely Welcomed! To get started:
 - Push to your branch (git push origin feature/your-feature).
 - Open a pull request with a clear description.
 
-📬 Connect
+# Connect
 
 Have feedback, feature ideas, or want to collaborate? Reach out!
 
