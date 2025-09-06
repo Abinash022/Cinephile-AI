@@ -4,7 +4,7 @@ Cinephile AI is your ultimate movie discovery companion, powered by AI to delive
 
 # Visuals
 
-![Image](https://github.com/user-attachments/assets/cfb6241b-4d76-4cb1-a8e9-c4a9c6e21477)
+<img src="https://github.com/user-attachments/assets/cfb6241b-4d76-4cb1-a8e9c6e21477" alt="App Screenshot" width="800">
 
 # Features
 
@@ -25,7 +25,7 @@ To Start running the project Locally. Follow the Steps below :-
 
 # Steps
 
-- Clone the Repository : git clone https://github.com/your-username/cinephile-ai.gitcd cinephile-ai
+- Clone the Repository : git clone https://github.com/Abinash022/Cinephile-AI.git
 - Install Dependencies: yarn install
 - Set Up Environment Variables: Create a .env file in the root directory and add your API keys:check out the .env.example file for the clarity
 - Check .env.example for required variables.
@@ -50,9 +50,9 @@ Any Contribution in the Project are absolutely Welcomed! To get started:
 
 Have feedback, feature ideas, or want to collaborate? Reach out!
 
-Email: abinashkarki008@gmail.com
-LinkedIn: https://www.linkedin.com/in/abinash-karki/
-X(Twitter): https://x.com/Abinash49122205Try
+- Email: abinashkarki008@gmail.com
+- LinkedIn: https://www.linkedin.com/in/abinash-karki/
+- X(Twitter): https://x.com/Abinash49122205Try
 
 📄 License
 This project is licensed under the MIT License.
