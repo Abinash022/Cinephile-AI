@@ -4,7 +4,7 @@ Cinephile AI is your ultimate movie discovery companion, powered by AI to delive
 
 # Visuals
 
-<img src="https://github.com/user-attachments/assets/cfb6241b-4d76-4cb1-a8e9c6e21477" alt="App Screenshot" width="800">
+<img src="https://github.com/user-attachments/assets/cfb6241b-4d76-4cb1-a8e9-c4a9c6e21477" alt="App Screenshot" width="800">
 
 # Features
 
