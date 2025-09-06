@@ -25,7 +25,7 @@ To Start running the project Locally. Follow the Steps below :-
 
 # Steps
 
-- Clone the Repository : git clone https://github.com/your-username/cinephile-ai.gitcd cinephile-ai
+- Clone the Repository : git clone https://github.com/Abinash022/Cinephile-AI.git
 - Install Dependencies: yarn install
 - Set Up Environment Variables: Create a .env file in the root directory and add your API keys:check out the .env.example file for the clarity
 - Check .env.example for required variables.
